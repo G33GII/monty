@@ -1,6 +1,14 @@
 #include "monty.h"
 
-_MONTY Em = {0, NULL, NULL, NULL};    /* LN STR   FUNC  VALUE */
+        /*   LN STR   FUNC  VALUE STACK */
+_MONTY Em = {0, NULL, NULL, NULL, NULL};
+/**
+* LN - Line number
+* STR - getline string
+* FUNC - function name after strtok
+* VALUE - Integer value after strtok
+* STACK -
+*/
 
 /**
 * main -
@@ -10,10 +18,10 @@ _MONTY Em = {0, NULL, NULL, NULL};    /* LN STR   FUNC  VALUE */
 */
 int main(int argc, char **argv)
 {
-    FILE *_fp;
+    FILE *_fp; /* fp - file pointer */
 
-    _ismonty_file(argv[1], argc);
-    _fp = _open_file(argv[1]);
+    _ismonty_file(argv[1], argc);   /* check whether the file name is a ".m" */
+    _fp = _open_file(argv[1]);      /* function to fopen */
     _cpFile(_fp);
 
 

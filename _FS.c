@@ -6,11 +6,13 @@
 */
 void (*_FS(void))(stack_t **stack, unsigned int line_number)
 {
+
+    /*
     int x = 0;
 
     instruction_t KF = {
-        {"push", &_push},
-        {"pall", &_pall},
+        {"push", _push},
+        {"pall", _pall},
         {NULL, NULL}
     };
 
@@ -18,9 +20,12 @@ void (*_FS(void))(stack_t **stack, unsigned int line_number)
     {
         if (!(strcmp(KV[x].k, s)))
         {
-            return (KV[x].f);
+            KV[x].f(&Em.STACK, Em.LN);
+            return;
         }
     }
-
+    At this pointer no matching function call was found therefore an error message
+    fprintf(stderr, "L%d: unknown instruction %s\n", Em.LN, Em.FUNC);
+    */
     return (NULL);
 }

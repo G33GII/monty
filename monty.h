@@ -5,7 +5,7 @@
 * Placed before the <stdio.h>
 * Ensures getline extensions are available 
 */
-#define _GNU_SOURCE 
+#define _GNU_SOURCE
 
 #include <sys/types.h>
 #include <stdlib.h>
@@ -59,6 +59,7 @@ typedef struct monty_
 	char *STR;
 	char *FUNC;
 	char *VALUE;
+	stack_t *STACK;
 	/*
 	stack_t **HD;
 	stack_t **TL;
@@ -66,8 +67,7 @@ typedef struct monty_
 } _MONTY;
 
 
-extern _MONTY Ex;
-
+extern _MONTY Em;
 /*
 unsigned int _lineCount(FILE *_b);
 void _rmwhitespace(void);

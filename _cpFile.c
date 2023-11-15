@@ -13,7 +13,7 @@ void _cpFile(FILE *_fp)
 
     while ((read = getline(&gline, &len, _fp)) != EOF)
     {
-        Em.STR = gline;
+        Em.STR = gline; /* Em - Extern Monty */
         Em.LN++;
         _exe();
     }
