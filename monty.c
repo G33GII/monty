@@ -3,6 +3,7 @@
  * 
  * 
 */
+program data = {NULL, 0, NULL, NULL};
 int main(int argc, char **argv)
 {
     FILE *folder;
@@ -22,6 +23,8 @@ int main(int argc, char **argv)
     
     while (fgets(buf, bufsize, folder))
     {
-        printf("%s\n", buf);
+        data.line_number++;
+        data.line = buf;
+        execute();
     }
 }

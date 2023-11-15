@@ -35,8 +35,18 @@ typedef struct instruction_s
 	void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
+typedef struct program
+{
+	char *line;
+	unsigned int line_number;
+	char *opcode;
+	stack_t *stack;
+} program;
+
+extern program data;
 
 void op_pall(stack_t **stack, unsigned int line_number);
 void op_push(stack_t **stack, unsigned int line_number);
-
+void execute(void);
+int _strcmp(char *s1, char *s2);
 #endif /* End of include guard */
