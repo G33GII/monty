@@ -1,4 +1,4 @@
 push 2
+push a
 push 6
-push 9
 pall

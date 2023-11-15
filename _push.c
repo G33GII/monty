@@ -20,6 +20,8 @@ void _push(stack_t **stack, unsigned int line_number)
         if (_isdigit(*_s))
         {
             fprintf(stderr, "L%d: usage: push integer\n", line_number);
+            free_STACK(Em.STACK);
+            free(Em.STR);
             exit(EXIT_FAILURE);
         }
         _s++;

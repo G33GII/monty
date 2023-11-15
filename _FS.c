@@ -30,5 +30,7 @@ void (*_FS(void))(stack_t **stack, unsigned int line_number)
     free(Em.FUNC);
     */
     fprintf(stderr, "L%d: unknown instruction %s\n", Em.LN, Em.FUNC);
+    free_STACK(Em.STACK);
+    free(Em.STR);
     exit(EXIT_FAILURE);
 }
