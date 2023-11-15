@@ -10,8 +10,8 @@ void _exe(void)
     _strtoken();
 
     /* Function Selection and Call 
-    _FS();
-    */
     printf("%s\n%s\n", Em.FUNC, Em.VALUE);
+    */
+    _FS();
 
 }

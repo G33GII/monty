@@ -26,6 +26,7 @@ int main(int argc, char **argv)
 
 
     _close_file(_fp, argv[1]);
+    free_STACK(Em.STACK);
     return (0);
 }
 

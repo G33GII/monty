@@ -1,31 +1,34 @@
 #include "monty.h"
 
 /**
+* _FS - Function Selection
 * _rmwhitespace -
 * Return: char pointer
 */
 void (*_FS(void))(stack_t **stack, unsigned int line_number)
 {
-
-    /*
     int x = 0;
 
-    instruction_t KF = {
+    /* KF - Key Function Pair */
+    instruction_t KF[] = {
         {"push", _push},
         {"pall", _pall},
-        {NULL, NULL}
+        {NULL, NULL},
     };
 
-    for (; KV[x].k; x++)
+
+    for (; KF[x].k; x++)
     {
-        if (!(strcmp(KV[x].k, s)))
+        if (!(strcmp(KF[x].k, Em.FUNC)))
         {
-            KV[x].f(&Em.STACK, Em.LN);
-            return;
+            KF[x].f(&Em.STACK, Em.LN);
+            return (NULL);
         }
     }
+    /*
     At this pointer no matching function call was found therefore an error message
-    fprintf(stderr, "L%d: unknown instruction %s\n", Em.LN, Em.FUNC);
+    free(Em.FUNC);
     */
-    return (NULL);
+    fprintf(stderr, "L%d: unknown instruction %s\n", Em.LN, Em.FUNC);
+    exit(EXIT_FAILURE);
 }
