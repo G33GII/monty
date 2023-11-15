@@ -46,9 +46,9 @@ typedef struct _op_
 extern st_data ex_dt;
 
 void _ismonty_file(char *argv, int argc);
+void _close_file(FILE *_fd, char *argv);
 FILE *_open_file(char *argv);
 void _getline(FILE *_fp);
-void _close_file(FILE *_fd, char *argv);
 
 
 #endif /* End of include guard */
