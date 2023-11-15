@@ -1,6 +1,12 @@
 #ifndef MONTY_H
 #define MONTY_H
 
+/** 
+* Placed before the <stdio.h>
+* Ensures getline extensions are available 
+*/
+#define _GNU_SOURCE 
+
 #include <sys/types.h>
 #include <stdlib.h>
 #include <unistd.h>
@@ -8,6 +14,7 @@
 #include <fcntl.h>
 #include <stdio.h>
 #include <ctype.h>
+
 
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
@@ -35,31 +42,50 @@ typedef struct stack_s
  */
 typedef struct instruction_s
 {
-	char *opcode;
+	char *k;
 	void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
 /**
  * struct _op_ -
- * @_lx:
+ * @line_number:
  * @_str:
  *
  * Description:
  */
-typedef struct _op_
+typedef struct monty_
 {
-	int _lx;
-	char *_str;
-} st_data;
+	unsigned int LN;
+	char *STR;
+	char *FUNC;
+	char *VALUE;
+	/*
+	stack_t **HD;
+	stack_t **TL;
+	*/
+} _MONTY;
 
 
-extern st_data ex_dt;
+extern _MONTY Ex;
 
+/*
+unsigned int _lineCount(FILE *_b);
+void _rmwhitespace(void);
+void _free(char **dp);
+*/
+
+void _push(stack_t **stack, unsigned int line_number);
+void _pall(stack_t **stack, unsigned int line_number);
+int isINT(char *s);
+
+
+void (*_FS(void))(stack_t **stack, unsigned int line_number);
 void _ismonty_file(char *argv, int argc);
 void _close_file(FILE *_fd, char *argv);
-char *_strtoken(char *_line);
 FILE *_open_file(char *argv);
 void _cpFile(FILE *_fp);
+void _strtoken(void);
+void _exe(void);
 
 
 #endif /* End of include guard */

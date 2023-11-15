@@ -2,10 +2,10 @@
 
 /**
 * _getline -
-* @_fp:
 * Return: void
 */
-char *_strtoken(char *_line)
+void _strtoken(void)
 {
-    return (strtok(_line, " "));
+    Em.FUNC = strtok(Em.STR, " \n\t");
+    Em.VALUE = strtok(NULL, " \n\t");
 }

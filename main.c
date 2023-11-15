@@ -1,6 +1,6 @@
 #include "monty.h"
 
-st_data ex_dt = {0, NULL};
+_MONTY Em = {0, NULL, NULL, NULL};    /* LN STR   FUNC  VALUE */
 
 /**
 * main -
