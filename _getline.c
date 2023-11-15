@@ -1,17 +1,18 @@
 #include "monty.h"
+#include <stdio.h>
 
 /**
 * _getline -
 * @_fp:
-* Return:
+* Return: void
 */
-void _getline(FILE *_fp)
+void _cpFile(FILE *_fp)
 {
-    size_t len = 0;
-    ssize_t read;
     char *gline = NULL;
+    long int read = 0;
+    size_t len = 0;
 
-     while ((read = getline(&gline, &len, _fp)) != -1)
+    while ((read = getline(&gline, &len, _fp)) != EOF)
     {
         printf("%s", gline);
     }

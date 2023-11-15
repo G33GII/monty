@@ -1,10 +1,10 @@
 #include "monty.h"
 
 /**
-* main -
-* @argc:
+* _close_file -
+* @_fd:
 * @argv:
-* Return: 0 on success
+* Return: void
 */
 void _close_file(FILE *_fd, char *argv)
 {

@@ -1,8 +1,8 @@
 #ifndef MONTY_H
 #define MONTY_H
 
-#include <stdlib.h>
 #include <string.h>
+#include <stdlib.h>
 #include <stdio.h>
 
 /**
@@ -35,7 +35,13 @@ typedef struct instruction_s
 	void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
-
+/**
+ * struct _op_ -
+ * @_lx:
+ * @_str:
+ *
+ * Description:
+ */
 typedef struct _op_
 {
 	int _lx;
@@ -48,7 +54,7 @@ extern st_data ex_dt;
 void _ismonty_file(char *argv, int argc);
 void _close_file(FILE *_fd, char *argv);
 FILE *_open_file(char *argv);
-void _getline(FILE *_fp);
+void _cpFile(FILE *_fp);
 
 
 #endif /* End of include guard */

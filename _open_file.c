@@ -1,10 +1,9 @@
 #include "monty.h"
 
 /**
-* main -
-* @argc:
+* _open_file -
 * @argv:
-* Return: 0 on success
+* Return: FILE pointer
 */
 FILE *_open_file(char *argv)
 {

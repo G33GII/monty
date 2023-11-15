@@ -1,10 +1,10 @@
 #include "monty.h"
 
 /**
-* main -
+* _ismonty_file -
 * @argc:
 * @argv:
-* Return: 0 on success
+* Return: void
 */
 void _ismonty_file(char *argv, int argc)
 {
