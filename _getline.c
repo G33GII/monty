@@ -1,10 +1,9 @@
 #include "monty.h"
 
 /**
-* main -
-* @argc:
-* @argv:
-* Return: 0 on success
+* _getline -
+* @_fp:
+* Return:
 */
 void _getline(FILE *_fp)
 {
