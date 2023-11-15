@@ -36,5 +36,4 @@ typedef struct stack_s
 	struct stack_s *next;
 } stack_t;
 
-
 #endif /* End of include guard */
