@@ -1,0 +1,49 @@
+stack_t *stack = NULL;
+    char *line = NULL;
+    size_t len = 0;
+    ssize_t read;
+    while ((read = getline(&line, &len, folder))!= -1)
+    {
+        char *opcode = malloc(sizeof(char) * 10);
+        int i = 0;
+        while (line[i]!= '\n')
+        {
+            opcode[i] = line[i];
+            i++;
+        }
+        opcode[i] = '\0';
+        instruction_t *instruction = NULL;
+        for (int i = 0; i < 10; i++)
+        {
+            if (opcode[i] == '\0')
+            {
+                break;
+            }
+            if (opcode[i] =='')
+            {
+                continue;
+            }
+            if (instruction == NULL)
+            {
+                instruction = malloc(sizeof(instruction_t));
+                instruction->opcode = malloc(sizeof(char) * 10);
+                instruction->opcode[0] = opcode[i];
+                instruction->opcode[1] = '\0';
+                instruction->f = NULL;
+            }
+            else
+            {
+                instruction->opcode = realloc(instruction->opcode, sizeof(char) * (i + 2));
+                instruction->opcode[i + 1] = opcode[i];
+                instruction->opcode[i + 2] = '\0';
+            }
+        }
+        if (instruction == NULL)
+        {
+            continue;
+        }
+        for (int i = 0; i < 10; i++)
+        {
+            
+        }
+    }
