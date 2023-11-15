@@ -35,6 +35,7 @@ typedef struct stack_s
 	struct stack_s *prev;
 	struct stack_s *next;
 } stack_t;
-
+void op_pall(stack_t **stack, unsigned int line_number);
+void op_push(stack_t **stack, unsigned int line_number);
 
 #endif /* End of include guard */
