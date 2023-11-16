@@ -17,8 +17,8 @@ int main(int argc, char **argv)
 	_ismonty_file(argv, argc); /* check whether the file name is a ".m" */
 	_fp = _open_file(argv[1]); /* function to fopen FILE name */
 
-    Em.FP = _fp;
-    Em.AGV = argv[1];
+	Em.FP = _fp;
+	Em.AGV = argv[1];
 
 	_cpFile(_fp);
 
