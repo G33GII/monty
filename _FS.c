@@ -18,6 +18,7 @@ void (*_FS(void))(stack_t **stack, unsigned int line_number)
         {"swap", _swap},
         {"nop", _nop},
         {"sub", _sub},
+        {"div", _div},
         {NULL, NULL},
     };
 
