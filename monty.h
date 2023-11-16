@@ -89,7 +89,7 @@ void _exe(void);
 int _isdigit(int c);
 void free_STACK(stack_t *head);
 void _pint(stack_t **stack, unsigned int line_number);
-
+void _pop(stack_t **stack, unsigned int line_number);
 
 
 #endif /* End of include guard */
