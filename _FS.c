@@ -16,6 +16,7 @@ void (*_FS(void))(stack_t **stack, unsigned int line_number)
         {"pint", _pint},
         {"pop", _pop},
         {"swap", _swap},
+        {"nop", _nop},
         {NULL, NULL},
     };
 
