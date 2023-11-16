@@ -88,7 +88,7 @@ void _strtoken(void);
 void _exe(void);
 int _isdigit(int c);
 void free_STACK(stack_t *head);
-
+void _pint(stack_t **stack, unsigned int line_number);
 
 
 
