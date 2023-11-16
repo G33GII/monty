@@ -22,9 +22,9 @@ void (*_FS(void))(stack_t **stack, unsigned int line_number)
 		{"mod", _mod},
 		{NULL, NULL},
 	};
-	if (Em.FUNC[0] = '#' || Em.FUNC[0] == '\0')
+	if (Em.FUNC[0] == '#' || !Em.FUNC)
 	{
-		return;
+		return (_nop);
 	}
 
 	for (; KF[x].k; x++)
@@ -35,10 +35,11 @@ void (*_FS(void))(stack_t **stack, unsigned int line_number)
 			return (NULL);
 		}
 	}
-	/*
-	   At this pointer no matching function call was found therefore an error message
-	   free(Em.FUNC);
-	   */
+	/**
+	  * At this pointer no matching function call was found
+      * therefore an error message
+	  * free(Em.FUNC);
+	  */
 	fprintf(stderr, "L%d: unknown instruction %s\n", Em.LN, Em.FUNC);
 	free_STACK(Em.STACK);
 	free(Em.STR);
