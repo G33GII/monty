@@ -14,11 +14,13 @@ void _div(stack_t **stack, unsigned int line_number)
 		fprintf(stderr, "L%d: can't div, stack too short\n", line_number);
 		exit(EXIT_FAILURE);
 	}
+	*stack = top_node->prev;
 	if (top_node->n == 0)
 	{
 		fprintf(stderr, "L%d: can't div by 0\n", line_number);
+		free(top_node);
 		exit(EXIT_FAILURE);
 	}
-	*stack = top_node->prev;
+
 	(*stack)->n = (*stack)->n / top_node->n;
 }
