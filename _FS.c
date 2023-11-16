@@ -21,6 +21,7 @@ void (*_FS(void))(stack_t **stack, unsigned int line_number)
 		{"div", _div},
 		{"mod", _mod},
         {"pchar", _pchar},
+        {"pstr", _pstr},
 		{NULL, NULL},
 	};
 	if (Em.FUNC[0] == '#' || !Em.FUNC)
