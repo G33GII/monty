@@ -20,6 +20,7 @@ void (*_FS(void))(stack_t **stack, unsigned int line_number)
 		{"sub", _sub},
 		{"div", _div},
 		{"mod", _mod},
+        {"pchar", _pchar},
 		{NULL, NULL},
 	};
 	if (Em.FUNC[0] == '#' || !Em.FUNC)
