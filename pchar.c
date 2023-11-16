@@ -17,7 +17,7 @@ void _pchar(stack_t **stack, unsigned int line_number)
 
 	if ((a < 0 || a > 127))
 	{
-		fprintf(stderr, "L%d: can't pchar, stack too short\n", line_number);
+		fprintf(stderr, "L%d: can't pchar, value out of range\n", line_number);
 		exit(EXIT_FAILURE);
 	}
 	printf("%c\n", a);
