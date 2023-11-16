@@ -1,10 +1,10 @@
 #ifndef MONTY_H
 #define MONTY_H
 
-/** 
-* Placed before the <stdio.h>
-* Ensures getline extensions are available 
-*/
+/**
+ * _GNU_SOURCE - Ensures getline extensions are available
+ * Placed before the <stdio.h>
+ */
 #define _GNU_SOURCE
 
 #include <sys/types.h>
@@ -34,7 +34,7 @@ typedef struct stack_s
 
 /**
  * struct instruction_s - opcode and its function
- * @opcode: the opcode
+ * @k: the opcode
  * @f: function to handle the opcode
  *
  * Description: opcode and its function
@@ -47,10 +47,14 @@ typedef struct instruction_s
 } instruction_t;
 
 /**
- * struct _op_ -
- * @line_number:
- * @_str:
- *
+ * struct monty_ - New data type for many members
+ * @LN: Line number
+ * @STR: getline string
+ * @FUNC: function name after strtok
+ * @VALUE: Integer value after strtok
+ * @STACK: Head of the data structure
+ * @FP: Head of the data structure
+ * @AGV: Head of the data structure
  * Description:
  */
 typedef struct monty_
@@ -60,36 +64,29 @@ typedef struct monty_
 	char *FUNC;
 	char *VALUE;
 	stack_t *STACK;
-	/*
-	stack_t **HD;
-	stack_t **TL;
-	*/
+
+	FILE *FP;
+	char *AGV;
 } _MONTY;
 
 
 extern _MONTY Em;
-/*
-unsigned int _lineCount(FILE *_b);
-void _rmwhitespace(void);
-void _free(char **dp);
-int isINT(char *s);
-*/
+
 
 void _push(stack_t **stack, unsigned int line_number);
 void _pall(stack_t **stack, unsigned int line_number);
 
 void (*_FS(void))(stack_t **stack, unsigned int line_number);
-void _ismonty_file(char *argv, int argc);
+void _ismonty_file(char **argv, int argc);
 void _close_file(FILE *_fd, char *argv);
 
+void free_STACK(stack_t *head);
 FILE *_open_file(char *argv);
 void _cpFile(FILE *_fp);
+int _isblnk(char *_s);
 void _strtoken(void);
-void _exe(void);
 int _isdigit(int c);
-void free_STACK(stack_t *head);
+int _isINT(char *s);
+void _exe(void);
 
-
-
-
-#endif /* End of include guard */
+#endif /* End of include GUARD */

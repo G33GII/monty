@@ -1,17 +1,16 @@
 #include "monty.h"
 
 /**
-* _exe -
-* Return: void
-*/
+ * _exe -
+ * Return: void
+ */
 void _exe(void)
 {
-     /* Tokenization of each line of command */
+    /* Tokenization of each line from geline "first = En.FUNC" "sescond = Em.VALUE" */
     _strtoken();
 
-    /* Function Selection and Call 
+    /*
     printf("%s\n%s\n", Em.FUNC, Em.VALUE);
     */
-    _FS();
-
+    _FS();  /* Function Selection and Call */
 }

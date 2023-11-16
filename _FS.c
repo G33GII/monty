@@ -1,10 +1,10 @@
 #include "monty.h"
 
 /**
-* _FS - Function Selection
-* _rmwhitespace -
-* Return: char pointer
-*/
+ * _FS - Function Selection
+ * _rmwhitespace -
+ * Return: char pointer
+ */
 void (*_FS(void))(stack_t **stack, unsigned int line_number)
 {
     int x = 0;
@@ -15,7 +15,6 @@ void (*_FS(void))(stack_t **stack, unsigned int line_number)
         {"pall", _pall},
         {NULL, NULL},
     };
-
 
     for (; KF[x].k; x++)
     {
@@ -30,7 +29,8 @@ void (*_FS(void))(stack_t **stack, unsigned int line_number)
     free(Em.FUNC);
     */
     fprintf(stderr, "L%d: unknown instruction %s\n", Em.LN, Em.FUNC);
-    free_STACK(Em.STACK);
     free(Em.STR);
+    free_STACK(Em.STACK);
+    _close_file(Em.FP, Em.AGV);
     exit(EXIT_FAILURE);
 }
