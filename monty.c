@@ -3,7 +3,7 @@
  * 
  * 
 */
-program data = {NULL, 0, NULL, NULL};
+program data = {NULL, 0, NULL, NULL, NULL, NULL};
 int main(int argc, char **argv)
 {
     FILE *folder;
@@ -13,6 +13,7 @@ int main(int argc, char **argv)
         fprintf(stderr, "USAGE: monty file\n");
         exit(EXIT_FAILURE);
     }
+
     folder = fopen(argv[1], "r");
 
     if (folder == NULL)
@@ -27,7 +28,7 @@ int main(int argc, char **argv)
         data.line = buf;
         execute();
     }
-    fclose(folder);
-    
-
+        fclose(folder); 
+        free(data.line);
+    return (0);
 }
