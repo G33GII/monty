@@ -40,13 +40,17 @@ typedef struct program
 	char *line;
 	unsigned int line_number;
 	char *opcode;
+	char *ag;
+	char *line_number_str;
 	stack_t *stack;
 } program;
 
 extern program data;
 
-void op_pall(stack_t **stack, unsigned int line_number);
-void op_push(stack_t **stack, unsigned int line_number);
+void opcode_pall(stack_t **stack, unsigned int line_number);
+void opcode_push(stack_t **stack, unsigned int line_number);
 void execute(void);
 int _strcmp(char *s1, char *s2);
+int isint(char *s);
+stack_t *top_stack(stack_t **stack);
 #endif /* End of include guard */

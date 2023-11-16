@@ -27,4 +27,7 @@ int main(int argc, char **argv)
         data.line = buf;
         execute();
     }
+    fclose(folder);
+    
+
 }
