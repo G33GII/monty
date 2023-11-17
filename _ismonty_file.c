@@ -9,6 +9,7 @@
 void _ismonty_file(char **argv, int argc)
 {
 	char *shft = NULL;
+	char *_m = NULL;
 	int _lx = 0;
 	/* char *_m = shft + _lx - 2; */
 
@@ -20,7 +21,9 @@ void _ismonty_file(char **argv, int argc)
 
 	shft = argv[1];
 	_lx = strlen(shft);
-	if (_lx < 2 && (strcmp(shft + _lx - 2, ".m")))
+	_m = shft + _lx - 2;
+
+	if (_lx < 2 || (strcmp(_m, ".m")))
 	{
 		fprintf(stderr, "USAGE: monty file\n");
 		exit(EXIT_FAILURE);

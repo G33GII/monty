@@ -7,12 +7,13 @@
  */
 FILE *_open_file(char *argv)
 {
-    FILE *_fp; /* fp - file pointer */
+	FILE *_fp; /* fp - file pointer */
 
-    if ((_fp = fopen(argv, "r")) == NULL)
-    {
-        fprintf(stderr, "Error: Can't open file %s\n", argv);
-        exit(EXIT_FAILURE);
-    }
-    return (_fp);
+	_fp = fopen(argv, "r");
+	if (_fp == NULL)
+	{
+		fprintf(stderr, "Error: Can't open file %s\n", argv);
+		exit(EXIT_FAILURE);
+	}
+	return (_fp);
 }
