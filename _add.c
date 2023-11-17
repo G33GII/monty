@@ -19,7 +19,7 @@ void _add(stack_t **stack, unsigned int line_number)
 		_EXITFAILURE();
 	}
 	lx++;
-    _z = top_node->n + (top_node->prev)->n;
-    _pop(&Em.STACK, Em.LN);
-    (*stack)->n = _z;
+	_z = top_node->n + (top_node->prev)->n;
+	_pop(&Em.STACK, Em.LN);
+	(*stack)->n = _z;
 }

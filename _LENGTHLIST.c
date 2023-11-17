@@ -1,9 +1,7 @@
 #include "monty.h"
 
 /**
- * _pall - Function that prints all data in the stack
- * @stack: Pointer to the head of the stack
- * @line_number: The current line number
+ * _LENGTHLIST - Function that prints all data in the stack
  * Return: void
  */
 int _LENGTHLIST(void)

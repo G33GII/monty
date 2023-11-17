@@ -1,4 +1,5 @@
 #include "monty.h"
+
 /**
  * _pstr - Function to print the top element of the stack
  * @stack: stack pointer

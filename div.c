@@ -7,20 +7,20 @@
  */
 void _div(stack_t **stack, unsigned int line_number)
 {
-	stack_t *top_node = *stack;
+	int _x = _LENGTHLIST();
 
-	if (stack == NULL || *stack == NULL)
+	if (_x < 2)
 	{
 		fprintf(stderr, "L%d: can't div, stack too short\n", line_number);
-		exit(EXIT_FAILURE);
-	}
-	*stack = top_node->prev;
-	if (top_node->n == 0)
-	{
-		fprintf(stderr, "L%d: can't div by 0\n", line_number);
-		free(top_node);
-		exit(EXIT_FAILURE);
+		_EXITFAILURE();
 	}
 
-	(*stack)->n = (*stack)->n / top_node->n;
+	if ((*stack)->n == 0)
+	{
+		fprintf(stderr, "L%d: can't div by 0\n", line_number);
+		_EXITFAILURE();
+	}
+
+	(*stack)->prev->n = (*stack)->prev->n / (*stack)->n;
+	_pop(&Em.STACK, Em.LN);
 }
