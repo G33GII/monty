@@ -23,6 +23,7 @@ void _ismonty_file(char **argv, int argc)
 	_lx = strlen(shft);
 	/*_m = shft + _lx - 2;*/
 
+	/* || (strcmp(_m, ".m")) Aparrantly all file formats are allowed */
 	if (_lx < 2)
 	{
 		fprintf(stderr, "Error: Can't open file %s\n", argv[1]);
