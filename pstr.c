@@ -13,7 +13,7 @@ void _pstr(stack_t **stack, unsigned int line_number)
 
 	if (*stack == NULL)
 	{
-		fprintf(stderr, "L%d: can't pstr, stack empty\n", line_number);
+		return;
 	}
 
 	while (node != NULL && node->n != 0 && node->n >= 0 && node->n <= 127)
