@@ -14,7 +14,7 @@ int main(int argc, char **argv)
 	FILE *_fp; /* fp - file pointer */
 
 	/* _FILEPRESENT(argv, argc); */
-	_ismonty_file(argv, argc); /* check whether the file name is a ".m" */
+	_ismonty_file(argv, argc); /* check whether the file name is a valid file */
 	_fp = _open_file(argv[1]); /* function to fopen FILE name */
 
 	Em.FP = _fp;

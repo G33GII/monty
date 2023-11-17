@@ -8,10 +8,7 @@
  */
 void _ismonty_file(char **argv, int argc)
 {
-	char *shft = NULL;
-	/*char *_m = NULL;*/
-	int _lx = 0;
-	/* char *_m = shft + _lx - 2; */
+	(void)argv;
 
 	if (argc != 2)
 	{
@@ -19,14 +16,20 @@ void _ismonty_file(char **argv, int argc)
 		exit(EXIT_FAILURE);
 	}
 
-	shft = argv[1];
-	_lx = strlen(shft);
-	/*_m = shft + _lx - 2;*/
-
-	/* || (strcmp(_m, ".m")) Aparrantly all file formats are allowed */
-	if (_lx < 2)
-	{
-		fprintf(stderr, "Error: Can't open file %s\n", argv[1]);
-		exit(EXIT_FAILURE);
-	}
+	/**
+	 * char *shft = NULL;
+	 * int _lx = 0;
+	 * char *_m = NULL;
+	 * char *_m = shft + _lx - 2;
+	 * shft = argv[1];
+	 * _lx = strlen(shft);
+	 * _m = shft + _lx - 2;
+	 *
+	 * 			Aparrantly all file formats are allowed
+	 *
+	 * if (_lx < 2 || (strcmp(_m, ".m"))) {
+	 * 		fprintf(stderr, "Error: Can't open file %s\n", argv[1]);
+	 * 		exit(EXIT_FAILURE);
+	 * 	}
+	*/
 }
