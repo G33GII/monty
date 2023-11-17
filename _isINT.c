@@ -9,17 +9,18 @@ int _isINT(char *_s)
 {
 	int x = 0;
 
-	if (_s == NULL)
+	if (_s == NULL || (_s[0] == '-' && _s[1] == '\0'))
 	{
 		fprintf(stderr, "L%d: usage: push integer\n", Em.LN);
-		free_STACK(Em.STACK);
-		free(Em.STR);
-		_close_file(Em.FP, Em.AGV);
-		exit(EXIT_FAILURE);
+		_EXITFAILURE();
 	}
 	while (_s[x])
 	{
-		if (!isdigit(_s[x]))
+		if ((isdigit(_s[x])) || (x == 0 && _s[0] == '-'))
+		{
+			x++;
+		}
+		else
 		{
 			fprintf(stderr, "L%d: usage: push integer\n", Em.LN);
 			_EXITFAILURE();
