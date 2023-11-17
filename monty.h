@@ -85,6 +85,9 @@ FILE *_open_file(char *argv);
 void _cpFile(FILE *_fp);
 int _isblnk(char *_s);
 void _strtoken(void);
+void _exe(void);
+int _isINT(char *_s);
+
 int _isdigit(int c);
 void free_STACK(stack_t *head);
 void _pint(stack_t **stack, unsigned int line_number);
