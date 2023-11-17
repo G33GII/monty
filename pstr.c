@@ -1,5 +1,4 @@
 #include "monty.h"
-
 /**
  * _pstr - Function to print the top element of the stack
  * @stack: stack pointer
@@ -11,6 +10,7 @@ void _pstr(stack_t **stack, unsigned int line_number)
 	stack_t *node = *stack;
 
 	(void)line_number;
+
 	if (*stack == NULL)
 	{
 		printf("\n");
@@ -22,5 +22,5 @@ void _pstr(stack_t **stack, unsigned int line_number)
 		node = node->prev;
 	}
 
-	/*printf("\n");*/
+	printf("\n");
 }
