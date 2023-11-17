@@ -75,6 +75,12 @@ extern _MONTY Em;
 
 void _push(stack_t **stack, unsigned int line_number);
 void _pall(stack_t **stack, unsigned int line_number);
+void _pint(stack_t **stack, unsigned int line_number);
+void _swap(stack_t **stack, unsigned int line_number);
+void _pop(stack_t **stack, unsigned int line_number);
+void _add(stack_t **stack, unsigned int line_number);
+void _mul(stack_t **stack, unsigned int line_number);
+void _nop(stack_t **stack, unsigned int line_number);
 
 void (*_FS(void))(stack_t **stack, unsigned int line_number);
 void _ismonty_file(char **argv, int argc);
@@ -88,5 +94,9 @@ void _strtoken(void);
 int _isdigit(int c);
 int _isINT(char *s);
 void _exe(void);
+int _LENGTHLIST(void);
+
+void _EXITFAILURE(void);
+
 
 #endif /* End of include GUARD */

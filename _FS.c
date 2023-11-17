@@ -1,18 +1,22 @@
 #include "monty.h"
 
 /**
- * _FS - Function Selection
- * _rmwhitespace -
+ * _FS - Function pointer Selection
  * Return: char pointer
  */
 void (*_FS(void))(stack_t **stack, unsigned int line_number)
 {
     int x = 0;
 
-    /* KF - Key Function Pair */
+    /* KF - Key Function Pair : OPCODE pair */
     instruction_t KF[] = {
+        {"pop", _pop},
+        {"mul", _mul},
+        {"nop", _nop},
+        {"add", _add},
         {"push", _push},
         {"pall", _pall},
+        {"pint", _pint},
         {NULL, NULL},
     };
 
@@ -24,13 +28,8 @@ void (*_FS(void))(stack_t **stack, unsigned int line_number)
             return (NULL);
         }
     }
-    /*
-    At this pointer no matching function call was found therefore an error message
-    free(Em.FUNC);
-    */
+    /* At this pointer no matching function name found therefore error message */
     fprintf(stderr, "L%d: unknown instruction %s\n", Em.LN, Em.FUNC);
-    free(Em.STR);
-    free_STACK(Em.STACK);
-    _close_file(Em.FP, Em.AGV);
-    exit(EXIT_FAILURE);
+    _EXITFAILURE();
+    return (NULL);
 }
