@@ -7,14 +7,14 @@
  */
 void _sub(stack_t **stack, unsigned int line_number)
 {
-	int _x = _LENGTHLIST();
+	stack_t *top_node = *stack;
 
-	if (_x < 2)
+	if (stack == NULL || (*stack)->prev == NULL)
 	{
 		fprintf(stderr, "L%d: can't sub, stack too short\n", line_number);
-		_EXITFAILURE();
+		exit(EXIT_FAILURE);
 	}
+	*stack = top_node->prev;
+	(*stack)->n = (*stack)->n - top_node->n;
 
-	(*stack)->prev->n = (*stack)->prev->n - (*stack)->n;
-	_pop(&Em.STACK, Em.LN);
 }

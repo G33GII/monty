@@ -1,34 +1,33 @@
 #include "monty.h"
 
 /**
- * _FS - Function pointer Selection
+ * _FS - Function Selection
+ * _rmwhitespace -
  * Return: char pointer
  */
 void (*_FS(void))(stack_t **stack, unsigned int line_number)
 {
 	int x = 0;
 
-	/* KF - Key Function Pair : OPCODE pair */
+	/* KF - Key Function Pair */
 	instruction_t KF[] = {
-		{"pop", _pop},
-		{"mod", _mod},
-		{"mul", _mul},
-		{"nop", _nop},
-		{"add", _add},
-		{"sub", _sub},
-		{"div", _div},
-		{"rotl", _rotl},
-		{"swap", _swap},
 		{"push", _push},
 		{"pall", _pall},
 		{"pint", _pint},
-		{"pchar", _pchar},
-		{"pstr", _pstr},
+		{"pop", _pop},
+		{"swap", _swap},
+		{"nop", _nop},
+		{"sub", _sub},
+		{"div", _div},
+		{"mod", _mod},
+        {"pchar", _pchar},
+        {"pstr", _pstr},
 		{NULL, NULL},
 	};
-
-	if ('#' == Em.FUNC[0])
-		return (NULL);
+	if (Em.FUNC[0] == '#' || !Em.FUNC)
+	{
+		return (_nop);
+	}
 
 	for (; KF[x].k; x++)
 	{
@@ -38,8 +37,13 @@ void (*_FS(void))(stack_t **stack, unsigned int line_number)
 			return (NULL);
 		}
 	}
-	/* At this pointer no matching function name found therefore error message */
+	/**
+	  * At this pointer no matching function call was found
+      * therefore an error message
+	  * free(Em.FUNC);
+	  */
 	fprintf(stderr, "L%d: unknown instruction %s\n", Em.LN, Em.FUNC);
-	_EXITFAILURE();
-	return (NULL);
+	free_STACK(Em.STACK);
+	free(Em.STR);
+	exit(EXIT_FAILURE);
 }

@@ -5,13 +5,13 @@
  * @line_number: line number
  * Return: void
  */
-void _div(stack_t **stack, unsigned int line_number)
+void _mod(stack_t **stack, unsigned int line_number)
 {
 	stack_t *top_node = *stack;
 
-	if (stack == NULL || *stack == NULL)
+	if (stack == NULL || (*stack)->prev == NULL)
 	{
-		fprintf(stderr, "L%d: can't div, stack too short\n", line_number);
+		fprintf(stderr, "L%d: can't mod, stack too short\n", line_number);
 		exit(EXIT_FAILURE);
 	}
 	*stack = top_node->prev;
@@ -22,5 +22,5 @@ void _div(stack_t **stack, unsigned int line_number)
 		exit(EXIT_FAILURE);
 	}
 
-	(*stack)->n = (*stack)->n / top_node->n;
+	(*stack)->n = (*stack)->n % top_node->n;
 }

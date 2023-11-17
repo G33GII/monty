@@ -6,7 +6,7 @@
  */
 void _strtoken(void)
 {
-	Em.FUNC = strtok(Em.STR, " \n\t");
-	Em.VALUE = strtok(NULL, " \n\t");
+    Em.FUNC = strtok(Em.STR, " \n\t");
+    Em.VALUE = strtok(NULL, " \n\t");
 }
 
