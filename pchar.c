@@ -7,13 +7,14 @@
  */
 void _pchar(stack_t **stack, unsigned int line_number)
 {
-	int a = (*stack)->n;
+	int a;
 
 	if (*stack == NULL)
 	{
 		fprintf(stderr, "L%d: can't pchar, stack empty\n", line_number);
 		_EXITFAILURE();
 	}
+	a = (*stack)->n;
 
 	if ((a < 0 || a > 127))
 	{
