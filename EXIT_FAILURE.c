@@ -6,8 +6,16 @@
  */
 void _EXITFAILURE(void)
 {
-	free(Em.STR);
-	free_STACK(Em.STACK);
-	_close_file(Em.FP, Em.AGV);
+	if (Em.STR)
+	{
+		free(Em.STR);
+	}
+
+	if (Em.STACK)
+	{
+		free_STACK(Em.STACK);
+	}
+
+		_close_file(Em.FP, Em.AGV);
 	exit(EXIT_FAILURE);
 }

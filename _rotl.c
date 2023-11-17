@@ -15,9 +15,9 @@ void _rotl(stack_t **stack, unsigned int line_number)
 	(void)line_number;
 	if (H == NULL)
 	{
-		fprintf(stderr, "Error: Empty stack\n");
-		exit(EXIT_FAILURE);
+		_EXITFAILURE();
 	}
+
 
 	lx = H->n;
 	while (H->prev != NULL)
