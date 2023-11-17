@@ -9,16 +9,21 @@
  */
 void _rotl(stack_t **stack, unsigned int line_number)
 {
-	stack_t *top_node = *stack;
+	stack_t *H = *stack;
 	int lx = 0;
 
 	(void)line_number;
-
-	lx = (*stack)->n;
-	while (top_node->prev != NULL)
+	if (H == NULL)
 	{
-		top_node->n = top_node->prev->n;
-		top_node = top_node->prev;
+		fprintf(stderr, "Error: Empty stack\n");
+		exit(EXIT_FAILURE);
 	}
-	top_node->n = lx;
+
+	lx = H->n;
+	while (H->prev != NULL)
+	{
+		H->n = H->prev->n;
+		H = H->prev;
+	}
+	H->n = lx;
 }
