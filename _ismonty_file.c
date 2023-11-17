@@ -25,7 +25,7 @@ void _ismonty_file(char **argv, int argc)
 
 	if (_lx < 2 || (strcmp(_m, ".m")))
 	{
-		fprintf(stderr, "USAGE: monty file\n");
+		fprintf(stderr, "Error: Can't open file %s\n", argv[1]);
 		exit(EXIT_FAILURE);
 	}
 }
