@@ -13,9 +13,9 @@ void _rotl(stack_t **stack, unsigned int line_number)
 	int lx = 0;
 
 	(void)line_number;
-	if (H == NULL)
+	if (H == NULL || H->prev == NULL)
 	{
-		_EXITFAILURE();
+		return;
 	}
 
 
