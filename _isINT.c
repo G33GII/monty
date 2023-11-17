@@ -9,7 +9,7 @@ int _isINT(char *_s)
 {
 	int x = 0;
 
-	if (_s == NULL || (_s[0] == '-' && _s[1] == '\0'))
+	if (_s == NULL)
 	{
 		fprintf(stderr, "L%d: usage: push integer\n", Em.LN);
 		_EXITFAILURE();
@@ -25,7 +25,6 @@ int _isINT(char *_s)
 			fprintf(stderr, "L%d: usage: push integer\n", Em.LN);
 			_EXITFAILURE();
 		}
-		x++;
 	}
 	return (0);
 }
