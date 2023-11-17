@@ -11,6 +11,7 @@ void (*_FS(void))(stack_t **stack, unsigned int line_number)
     /* KF - Key Function Pair : OPCODE pair */
     instruction_t KF[] = {
         {"pop", _pop},
+        {"mod", _mod},
         {"mul", _mul},
         {"nop", _nop},
         {"add", _add},

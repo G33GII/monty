@@ -1,7 +1,8 @@
 #include "monty.h"
 
 /**
- * _pop - Function that POP the HUD of the stack
+ * _mul - multiplies the second top element of the stack with
+ *                              the top element of the stack
  * @stack: Pointer to the head of the stack
  * @line_number: The current line number
  * Return: void
@@ -9,26 +10,17 @@
 void _mul(stack_t **stack, unsigned int line_number)
 {
 	stack_t *top_node = *stack;
+	int _x = _LENGTHLIST();
+	int _z = 0, lx = 0;
 
-	if (top_node == NULL)
+	if (_x < 2)
 	{
-		fprintf(stderr, "L%d: can't pop an empty stack\n", line_number);
+		fprintf(stderr, "L%d: can't mul, stack too short\n", line_number);
 		_EXITFAILURE();
 	}
-	*stack = (*stack)->prev;
-	free(top_node);
+
+	lx++;
+	_z = top_node->n * (top_node->prev)->n;
+	_pop(&Em.STACK, Em.LN);
+	(*stack)->n = _z;
 }
-
-
-/* 
-Implement the mul opcode.
-
-The mul opcode
-
-The opcode mul multiplies the second top element of the stack with the top element of the stack.
-
-Usage: mul
-If the stack contains less than two elements, print the error message L<line_number>: can't mul, stack too short, followed by a new line, and exit with the status EXIT_FAILURE
-The result is stored in the second top element of the stack, and the top element is removed, so that at the end:
-The top element of the stack contains the result
-The stack is one element shorter*/
