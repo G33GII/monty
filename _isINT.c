@@ -12,19 +12,19 @@ int _isINT(char *_s)
 	if (_s == NULL)
 	{
 		fprintf(stderr, "L%d: usage: push integer\n", Em.LN);
-		free_STACK(Em.STACK);
-		free(Em.STR);
-		_close_file(Em.FP, Em.AGV);
-		exit(EXIT_FAILURE);
+		_EXITFAILURE();
 	}
-	while (_s[x])
+	while (_s[x] != '\0')
 	{
-		if (!isdigit(_s[x]))
+		if ((isdigit(_s[x])) || (x == 0 && _s[0] == '-'))
+		{
+			x++;
+		}
+		else
 		{
 			fprintf(stderr, "L%d: usage: push integer\n", Em.LN);
 			_EXITFAILURE();
 		}
-		x++;
 	}
 	return (0);
 }
