@@ -8,29 +8,22 @@
  */
 void _rotr(stack_t **stack, unsigned int line_number)
 {
-	stack_t *H = *stack;
-	stack_t *T = Em.STACKT;
-	int lx = _LENGTHLIST() / 2, x = 0, z;
+    stack_t *copy;
 
-	(void)line_number;
-	if (H == NULL || H->prev == NULL) /* If list empty or only one NODE */
-		return;
+    (void)line_number;
 
-	/**
-	 * Checking if theres a second string in the rotr command "rotr GERRY"
-	 */
-	if (Em.VALUE)
-		return;
-	/* Return if more than 1 tokenizable strings exist */
-
-	while (x < lx)
-	{
-		z = H->n;
-		H->n = T->n;
-		T->n = z;
-
-		H = H->prev;
-		T = T->next;
-		x++;
-	}
+    copy = *stack;
+    if (*stack == NULL || (*stack)->next == NULL)
+    {
+        return;
+    }
+    while (copy->prev)
+    {
+        copy = copy->prev;
+    }
+    copy->prev = *stack;
+    copy->next->prev = NULL;
+    copy->next = NULL;
+    (*stack)->next = copy;
+    (*stack) = copy;
 }
