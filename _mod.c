@@ -26,6 +26,6 @@ void _mod(stack_t **stack, unsigned int line_number)
 
 	lx++;
 	_z = (top_node->prev)->n % top_node->n;
-	_pop(&Em.STACK, Em.LN);
+	_pop(&Em.STACKH, Em.LN);
 	(*stack)->n = _z;
 }

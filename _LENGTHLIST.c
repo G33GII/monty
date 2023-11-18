@@ -6,7 +6,7 @@
  */
 int _LENGTHLIST(void)
 {
-	stack_t *top_node = Em.STACK;
+	stack_t *top_node = Em.STACKH;
 	int x = 0;
 
 	while (top_node != NULL)

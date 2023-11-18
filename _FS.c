@@ -35,7 +35,7 @@ void (*_FS(void))(stack_t **stack, unsigned int line_number)
 	{
 		if (!(strcmp(KF[x].k, Em.FUNC)))
 		{
-			KF[x].f(&Em.STACK, Em.LN);
+			KF[x].f(&Em.STACKH, Em.LN);
 			return (NULL);
 		}
 	}

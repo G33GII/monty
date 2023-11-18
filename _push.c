@@ -28,6 +28,7 @@ void _push(stack_t **stack, unsigned int line_number)
 	if (top_node == NULL)
 	{
 		*stack = new_node;
+		Em.STACKT = new_node;
 	}
 	else
 	{

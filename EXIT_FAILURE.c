@@ -11,9 +11,9 @@ void _EXITFAILURE(void)
 		free(Em.STR);
 	}
 
-	if (Em.STACK)
+	if (Em.STACKH)
 	{
-		free_STACK(Em.STACK);
+		free_STACK(Em.STACKH);
 	}
 
 		_close_file(Em.FP, Em.AGV);

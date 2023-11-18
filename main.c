@@ -1,7 +1,7 @@
 #include "monty.h"
 
-/* Em   =    FP    AGV   STR   FUNC  VALUE STACK LN*/
-_MONTY Em = {NULL, NULL, NULL, NULL, NULL, NULL, 0};
+/* Em   =    FP    AGV   STR   FUNC  VALUE STACKH STACKT LN*/
+_MONTY Em = {NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0};
 
 /**
  * main - Main function for interpreting ".m" FILEs
@@ -23,6 +23,6 @@ int main(int argc, char **argv)
 	_cpFile(_fp);
 
 	_close_file(_fp, argv[1]);
-	free_STACK(Em.STACK);
+	free_STACK(Em.STACKH);
 	return (0);
 }

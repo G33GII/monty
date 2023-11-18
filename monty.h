@@ -54,7 +54,8 @@ typedef struct instruction_s
  * @AGV: Head of the data structure
  * @FUNC: function name after strtok
  * @VALUE: Integer value after strtok
- * @STACK: Head of the data structure
+ * @STACKH: Head pointer of the data structure
+ * @STACKT: TAIL pointer of the data structure
  * Description:
  */
 typedef struct monty_
@@ -64,7 +65,8 @@ typedef struct monty_
 	char *STR;
 	char *FUNC;
 	char *VALUE;
-	stack_t *STACK;
+	stack_t *STACKH;
+	stack_t *STACKT;
 	unsigned int LN;
 
 } _MONTY;

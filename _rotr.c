@@ -1,16 +1,16 @@
 #include "monty.h"
 
 /**
- * _rotl - The top element of the stack becomes the last one,
- * and the second top element of the stack becomes the first one
+ * _rotr - opcode rotr rotates the stack to the bottom
  * @stack: Pointer to the head of the stack
  * @line_number: The current line number
  * Return: void
  */
-void _rotl(stack_t **stack, unsigned int line_number)
+void _rotr(stack_t **stack, unsigned int line_number)
 {
 	stack_t *H = *stack;
-	int lx = 0;
+	stack_t *T = Em.STACKT;
+	int lx = _LENGTHLIST() / 2, x = 0, z;
 
 	(void)line_number;
 	if (H == NULL || H->prev == NULL)
@@ -18,11 +18,13 @@ void _rotl(stack_t **stack, unsigned int line_number)
 		return;
 	}
 
-	lx = H->n;
-	while (H->prev != NULL)
+	while (x < lx)
 	{
-		H->n = H->prev->n;
+		z = H->n;
+		H->n = T->n;
+		T->n = z;
 		H = H->prev;
+		T = T->next;
+		x++;
 	}
-	H->n = lx;
 }
