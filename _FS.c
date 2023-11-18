@@ -18,6 +18,7 @@ void (*_FS(void))(stack_t **stack, unsigned int line_number)
 		{"sub", _sub},
 		{"div", _div},
 		{"rotl", _rotl},
+		{"rotr", _rotr},
 		{"swap", _swap},
 		{"push", _push},
 		{"pall", _pall},

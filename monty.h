@@ -19,8 +19,8 @@
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
  * @n: integer
- * @prev: points to the previous element of the stack (or queue)
  * @next: points to the next element of the stack (or queue)
+ * @prev: points to the previous element of the stack (or queue)
  *
  * Description: doubly linked list node structure
  * for stack, queues, LIFO, FIFO
@@ -50,23 +50,23 @@ typedef struct instruction_s
  * struct monty_ - New data type for many members
  * @LN: Line number
  * @STR: getline string
+ * @FP: Head of the data structure
+ * @AGV: Head of the data structure
  * @FUNC: function name after strtok
  * @VALUE: Integer value after strtok
  * @STACK: Head of the data structure
- * @FP: Head of the data structure
- * @AGV: Head of the data structure
  * Description:
  */
 typedef struct monty_
 {
-	unsigned int LN;
+	FILE *FP;
+	char *AGV;
 	char *STR;
 	char *FUNC;
 	char *VALUE;
 	stack_t *STACK;
+	unsigned int LN;
 
-	FILE *FP;
-	char *AGV;
 } _MONTY;
 
 
@@ -76,6 +76,7 @@ extern _MONTY Em;
 void _pchar(stack_t **stack, unsigned int line_number);
 void _pstr(stack_t **stack, unsigned int line_number);
 void _rotl(stack_t **stack, unsigned int line_number);
+void _rotr(stack_t **stack, unsigned int line_number);
 void _swap(stack_t **stack, unsigned int line_number);
 void _push(stack_t **stack, unsigned int line_number);
 void _pall(stack_t **stack, unsigned int line_number);
@@ -94,18 +95,17 @@ void _div(stack_t **stack, unsigned int line_number);
 void (*_FS(void))(stack_t **stack, unsigned int line_number);
 void _ismonty_file(char **argv, int argc);
 void _close_file(FILE *_fd, char *argv);
-
 void free_STACK(stack_t *head);
 FILE *_open_file(char *argv);
+void _EXITFAILURE(void);
 void _cpFile(FILE *_fp);
+int _LENGTHLIST(void);
 int _isblnk(char *_s);
 void _strtoken(void);
 int _isdigit(int c);
 int _isINT(char *s);
 void _exe(void);
-int _LENGTHLIST(void);
 
-void _EXITFAILURE(void);
 
 
 #endif /* End of include GUARD */
