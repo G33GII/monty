@@ -9,10 +9,19 @@
 void _push(stack_t **stack, unsigned int line_number)
 {
 	stack_t *new_node, *top_node;
-	char *_v = Em.VALUE;
+	char *_v = Em.VALUE, *z;
 	(void)line_number;
 
-	_isINT(_v);
+	_isINT(_v); /* Makes the second string is in INT*/
+
+	/**
+	 * Continuation of the strtok started in _strtoken function
+	 * Checking if theres a third string in the push command "push 1 GERRY"
+	 */
+	z = strtok(NULL, " \n\t");
+	if (z)
+		return;
+	/* Return if more than 2 tokenizable strings exist */
 
 	new_node = malloc(sizeof(stack_t));
 	if (new_node == NULL)
