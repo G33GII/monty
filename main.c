@@ -1,7 +1,7 @@
 #include "monty.h"
 
-/* Em   =    FP    AGV   STR   FUNC  VALUE STACKH STACKT LN*/
-_MONTY Em = {NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0};
+/* Em   =   PUQU FP   AGV   STR   FUNC  VALUE STACKH STACKT LN*/
+_MONTY Em = {0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0};
 
 /**
  * main - Main function for interpreting ".m" FILEs

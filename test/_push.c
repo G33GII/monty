@@ -9,7 +9,7 @@
 void _push(stack_t **stack, unsigned int line_number)
 {
 	/* NN - New Node | HP - Head Pointer */
-	stack_t *NN, *HP = *stack, *TP = Em.STACKT;
+	stack_t *NN, *HP = *stack;
 	char *_v = Em.VALUE, *z;
 	(void)line_number;
 
@@ -30,13 +30,13 @@ void _push(stack_t **stack, unsigned int line_number)
 	{
 		NN->next = TP;
 		TP->prev = NN;
-		Em.STACKT = NN;
+		*stack = NN;
 	}
 	else	/* Default = 0 STACK LIFO */
 	{
 		NN->prev = HP;
 		HP->next = NN;
-		Em.STACKH = NN;
+		*stack = NN;
 	}
 
 }

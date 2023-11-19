@@ -56,10 +56,12 @@ typedef struct instruction_s
  * @VALUE: Integer value after strtok
  * @STACKH: Head pointer of the data structure
  * @STACKT: TAIL pointer of the data structure
+ * @PUQU: Determines whether list is stack or queue
  * Description:
  */
 typedef struct monty_
 {
+	int PUQU;
 	FILE *FP;
 	char *AGV;
 	char *STR;
@@ -76,6 +78,8 @@ extern _MONTY Em;
 
 
 void _pchar(stack_t **stack, unsigned int line_number);
+void _queue(stack_t **stack, unsigned int line_number);
+void _stack(stack_t **stack, unsigned int line_number);
 void _pstr(stack_t **stack, unsigned int line_number);
 void _rotl(stack_t **stack, unsigned int line_number);
 void _rotr(stack_t **stack, unsigned int line_number);
@@ -101,6 +105,7 @@ void free_STACK(stack_t *head);
 FILE *_open_file(char *argv);
 void _EXITFAILURE(void);
 void _cpFile(FILE *_fp);
+stack_t *_MEMALLOC(void);
 int _LENGTHLIST(void);
 int _isblnk(char *_s);
 void _strtoken(void);

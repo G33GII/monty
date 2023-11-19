@@ -8,28 +8,28 @@
  */
 void _ismonty_file(char **argv, int argc)
 {
-	(void)argv;
+    (void) argv;
 
-	if (argc != 2)
-	{
-		fprintf(stderr, "USAGE: monty file\n");
-		exit(EXIT_FAILURE);
-	}
+    if (argc != 2)
+    {
+        fprintf(stderr, "USAGE: monty file\n");
+        exit(EXIT_FAILURE);
+    }
 
-	/**
-	 * char *shft = NULL;
-	 * int _lx = 0;
-	 * char *_m = NULL;
-	 * char *_m = shft + _lx - 2;
-	 * shft = argv[1];
-	 * _lx = strlen(shft);
-	 * _m = shft + _lx - 2;
-	 *
-	 * 			Aparrantly all file formats are allowed
-	 *
-	 * if (_lx < 2 || (strcmp(_m, ".m"))) {
-	 * 		fprintf(stderr, "Error: Can't open file %s\n", argv[1]);
-	 * 		exit(EXIT_FAILURE);
-	 * 	}
-	*/
+    /**
+     * char *shft = NULL;
+     * int _lx = 0;
+     * char *_m = NULL;
+     * char *_m = shft + _lx - 2;
+     * shft = argv[1];
+     * _lx = strlen(shft);
+     * _m = shft + _lx - 2;
+     *
+     * 			Aparrantly all file formats are allowed
+     *
+     * if (_lx < 2 || (strcmp(_m, ".m"))) {
+     * 		fprintf(stderr, "Error: Can't open file %s\n", argv[1]);
+     * 		exit(EXIT_FAILURE);
+     * 	}
+     */
 }

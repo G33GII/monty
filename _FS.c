@@ -23,8 +23,10 @@ void (*_FS(void))(stack_t **stack, unsigned int line_number)
 		{"push", _push},
 		{"pall", _pall},
 		{"pint", _pint},
-		{"pchar", _pchar},
 		{"pstr", _pstr},
+		{"pchar", _pchar},
+		{"stack", _stack},
+		{"queue", _queue},
 		{NULL, NULL},
 	};
 
