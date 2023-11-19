@@ -1,7 +1,7 @@
 #include "monty.h"
 
 /**
- * _enqueue - Changes stack to a FIFO structure
+ * _queue - Changes stack to a FIFO structure
  * @stack: Pointer to the head of the stack
  * @line_number: The current line number
  * Return: void

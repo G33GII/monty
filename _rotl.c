@@ -9,21 +9,21 @@
  */
 void _rotl(stack_t **stack, unsigned int line_number)
 {
-	stack_t *H = *stack;
-	int lx = 0;
-
-	(void)line_number;
-	if (H == NULL || H->prev == NULL)
-	{
-		return;
-	}
+    stack_t *H = *stack;
+    int lx = 0;
 
 
-	lx = H->n;
-	while (H->prev != NULL)
-	{
-		H->n = H->prev->n;
-		H = H->prev;
-	}
-	H->n = lx;
+
+
+    (void) line_number;
+    if (H == NULL || H->prev == NULL) /* If list empty or only one NODE */
+        return;
+
+    lx = H->n;
+    while (H->prev != NULL)
+    {
+        H->n = H->prev->n;
+        H = H->prev;
+    }
+    H->n = lx;
 }
