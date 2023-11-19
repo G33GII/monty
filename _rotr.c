@@ -13,13 +13,8 @@ void _rotr(stack_t **stack, unsigned int line_number)
 	int lx = 0;
 
 	(void) line_number;
-	if (H == NULL || H->prev == NULL) /* If list empty or only one NODE */
+	if (H->prev == NULL || H == NULL) /* If list empty or only one NODE */
 		return;
-
-	/* Checking if theres a second string in the rotr command "rotr GERRY" */
-	if (Em.VALUE)
-		return;
-	/* Return if more than 1 tokenizable strings exist */
 
 	lx = T->n;
 	while (T->next != NULL)

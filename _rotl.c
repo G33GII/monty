@@ -12,11 +12,8 @@ void _rotl(stack_t **stack, unsigned int line_number)
 	stack_t *H = *stack;
 	int lx = 0;
 
-
-
-
 	(void) line_number;
-	if (H == NULL || H->prev == NULL) /* If list empty or only one NODE */
+	if (H->prev == NULL || H == NULL) /* If list empty or only one NODE */
 		return;
 
 	lx = H->n;
