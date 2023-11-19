@@ -31,4 +31,11 @@ pstr
 rotl
 push 87
 rotr
+queue
+push 98
+push 1
+push 34
+push 344
+stack
+push 13
 pall

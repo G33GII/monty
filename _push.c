@@ -10,13 +10,10 @@ void _push(stack_t **stack, unsigned int line_number)
 {
 	/* NN - New Node | HP - Head Pointer */
 	stack_t *NN, *HP = *stack, *TP = Em.STACKT;
-	char *_v = Em.VALUE, *z;
+	char *_v = Em.VALUE;
 	(void)line_number;
 
 	_isINT(_v); /* Makes sure the second string is an INT */
-	z = strtok(NULL, " \n\t"); /* Strtok started in "_strtoken" func */
-	if (z) /* Checks if theres a third str like "push 1 GERRY" */
-		return;
 
 	NN = _MEMALLOC(); /* Allocates mem & fill in the data or value */
 	if (HP == NULL)	/* Takes care of the first created NODE */
